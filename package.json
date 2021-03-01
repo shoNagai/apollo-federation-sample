@@ -23,6 +23,7 @@
   "scripts": {
     "start": "micro ./build/index.js",
     "dev": "node -r ts-node/register node_modules/.bin/micro-dev ./src/index.ts",
+    "services:dev": "ts-node ./services/books/index.ts & ts-node ./services/users/index.ts",
     "build": "tsc -b",
     "format": "prettier . -w",
     "lint": "eslint src/**/*.ts",
@@ -30,6 +31,9 @@
     "generate": "graphql-codegen"
   },
   "dependencies": {
+    "@apollo/federation": "^0.21.2",
+    "@apollo/gateway": "^0.23.2",
+    "apollo-server": "^2.21.0",
     "apollo-server-micro": "^2.21.0",
     "graphql": "^15.5.0",
     "graphql-import": "^1.0.2",

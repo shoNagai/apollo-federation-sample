@@ -1,16 +1,12 @@
+import { ApolloGateway } from '@apollo/gateway';
 import { ApolloServer } from 'apollo-server-micro';
-import { importSchema } from 'graphql-import';
-import { makeExecutableSchema } from 'graphql-tools';
-import { send } from 'micro';
-import { get, post, router } from 'microrouter';
-import { resolvers } from './resolvers';
 
-const schema = makeExecutableSchema({
-  typeDefs: importSchema('src/schemas/schema.graphql'),
-  resolvers,
+const gateway = new ApolloGateway({
+  serviceList: [
+    { name: 'books', url: 'http://localhost:4001' },
+    { name: 'users', url: 'http://localhost:4002' },
+  ],
 });
 
-const apolloServer = new ApolloServer({ schema });
-const graphqlHandler = apolloServer.createHandler({ path: '/' });
-
-module.exports = router(post('/', graphqlHandler), get('/', graphqlHandler), (_, res) => send(res, 404, 'Not Found'));
+const apolloServer = new ApolloServer({ gateway, subscriptions: false });
+export default apolloServer.createHandler({ path: '/' });
