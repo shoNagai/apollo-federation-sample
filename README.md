@@ -1,6 +1,6 @@
 # apollo-federation-sample
 
-Getting started with GraphQL on apollo-server-micro 🚀
+Getting started with apollo-federation 🚀
 
 ## Installation
 
