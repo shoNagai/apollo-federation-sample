@@ -1,14 +1,14 @@
 import { gql } from 'apollo-server-micro';
 
 export const typeDefs = gql`
-  type User {
+  type Character {
     id: ID!
     name: String!
     book: Book
   }
 
   type Query {
-    users: [User!]!
+    characters: [Character!]!
   }
 
   extend type Book @key(fields: "id") {

@@ -14,8 +14,8 @@ $ yarn federation:dev
 ## sample query
 
 ```TypeScript
-query usersWithBook {
-  users {
+query charactersWithBook {
+  characters {
     id
     name
     book {
@@ -28,4 +28,4 @@ query usersWithBook {
 
 ```
 
-![playground](https://i.gyazo.com/439dc4cf1ac00573c1aa64b7d160de57.gif)
+![playground](https://i.gyazo.com/afd082cbd502188ad8a287259fadeb35.gif)

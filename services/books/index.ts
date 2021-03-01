@@ -10,5 +10,5 @@ const schema = buildFederatedSchema({
 
 const apolloServer = new ApolloServer({ schema });
 apolloServer.listen({ port: 4001 }).then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+  console.log(`🚀 Books Server ready at ${url}`);
 });

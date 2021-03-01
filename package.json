@@ -24,7 +24,7 @@
   "scripts": {
     "start": "micro ./build/index.js",
     "dev": "node -r ts-node/register node_modules/.bin/micro-dev ./src/index.ts",
-    "services:dev": "ts-node ./services/books/index.ts & ts-node ./services/users/index.ts",
+    "services:dev": "ts-node ./services/books/index.ts & ts-node ./services/characters/index.ts",
     "federation:dev": "yarn services:dev & yarn dev",
     "build": "tsc -b",
     "format": "prettier . -w",
