@@ -1,57 +1,31 @@
-# apollo-server-micro-boilerplate
+# apollo-federation-sample
 
 Getting started with GraphQL on apollo-server-micro 🚀
 
 ## Installation
 
 ```
-$ git clone https://github.com/shoNagai/apollo-server-micro-boilerplate.git
-$ cd apollo-server-micro-boilerplate
+$ git clone https://github.com/shoNagai/apollo-federation-sample.git
+$ cd apollo-federation-sample
 $ yarn install
-$ yarn dev
+$ yarn federation:dev
 ```
 
-## step1 schema design
+## sample query
 
 ```TypeScript
-type Book {
-  id: ID!
-  title: String!
-  author: String!
+query usersWithBook {
+  users {
+    id
+    name
+    book {
+      id
+      title
+      author
+    }
+  }
 }
-```
-
-```TypeScript
-type Query {
-  books: [Book!]!
-}
-```
-
-## step2 generate types
 
 ```
-$ yarn generate
-```
 
-```
-src/types/graphql.ts
-```
-
-## step3 create a resolver
-
-```TypeScript
-import mockData from '../mocks/book.json';
-import { Resolvers } from '../types/graphql';
-
-export const resolvers: Resolvers = {
-  Query: {
-    books: () => mockData,
-  },
-};
-```
-
-## step4 try playground
-```
-$ yarn dev
-```
-![playground](https://i.gyazo.com/60bf027d64e96bbb6774f00c92e244db.gif)
+![playground](https://i.gyazo.com/439dc4cf1ac00573c1aa64b7d160de57.gif)

@@ -1,22 +1,23 @@
 {
-  "name": "apollo-server-micro-boilerplate",
+  "name": "apollo-federation-sample",
   "version": "1.0.0",
   "main": "index.js",
   "author": "sho nagai <strawberry4062@gmail.com>",
-  "description": "Getting started with GraphQL on apollo-server-micro 🚀",
+  "description": "Getting started with apollo-federation 🚀",
   "license": "MIT",
-  "homepage": "https://github.com/shoNagai/apollo-server-micro-boilerplate#readme",
+  "homepage": "https://github.com/shoNagai/apollo-federation-sample#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shoNagai/apollo-server-micro-boilerplate"
+    "url": "https://github.com/shoNagai/apollo-federation-sample"
   },
   "bugs": {
-    "url": "https://github.com/shoNagai/apollo-server-micro-boilerplate/issues"
+    "url": "https://github.com/shoNagai/apollo-federation-sample/issues"
   },
   "keywords": [
     "typescript",
     "micro",
     "apollo-server",
+    "apollo-federation",
     "microservices"
   ],
   "private": false,
@@ -24,6 +25,7 @@
     "start": "micro ./build/index.js",
     "dev": "node -r ts-node/register node_modules/.bin/micro-dev ./src/index.ts",
     "services:dev": "ts-node ./services/books/index.ts & ts-node ./services/users/index.ts",
+    "federation:dev": "yarn services:dev & yarn dev",
     "build": "tsc -b",
     "format": "prettier . -w",
     "lint": "eslint src/**/*.ts",
